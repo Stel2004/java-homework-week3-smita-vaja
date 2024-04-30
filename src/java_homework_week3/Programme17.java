@@ -11,47 +11,43 @@ public class Programme17 {
     public static void main(String[] args) {
         //Scanner declaration for reading input form console
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a length of array: ");
-        int arrLength = scanner.nextInt();
+        System.out.println("Enter the length for both arrays: ");
+        int arrLength = Integer.parseInt(scanner.nextLine());
 
         // String array Declaration
         String[] strArray = new String[arrLength];
+        System.out.println("-----String Array elements-------------");
         for (int j = 0; j < strArray.length; j++){
-            System.out.println("Please enter " + j + " element value:");
+            System.out.println("Please enter " + j + " element value of String Array:");
             strArray[j] = scanner.nextLine();
         }
 
         // Numeric array Declaration
         int[] numArray = new int[arrLength];
+        System.out.println("-----Number Array elements-------------");
         for (int i = 0; i < numArray.length; i++){
-            System.out.println("Please enter " + i + " element number value:");
+            System.out.println("Please enter " + i + " element value of Number Array:");
             numArray[i] = scanner.nextInt();
         }
-
-        //int[] numArray = scanner.next();
-        // Numeric Array declaration
-        //int[] numArray = {1789, 2035, 1899, 2040, 1950, 2255, 7897, 1455, 787};
-
-        //String array declaration
-        //String[] strArray = { "Alpha", "Bravo", "Delta", "Hotel", "Mike", "Sierra", "Peter", "Kilo"};
 
         //Closing the scanner object
         scanner.close();
 
+        // calling static method to sort both arrays
         sortingArray(numArray, strArray);
     }
 
     // Declared method for the sorting number and string array
     public static void sortingArray(int[] numArray, String[] strArray){
-        System.out.println("Actual Numeric Array was :  " + Arrays.toString(numArray));
-        //Sorting the array
+        System.out.println("Actual Numeric Array:  " + Arrays.toString(numArray));
+        //Sorting the numeric array
         Arrays.sort(numArray);
-        System.out.println("Sorted Numerical Array is : " + Arrays.toString(numArray));
+        System.out.println("Sorted Numerical Array: " + Arrays.toString(numArray));
         //System.out.println("");
-        System.out.println("Actual String Array was: " + Arrays.toString(strArray));
-        //Sorting the array
+        System.out.println("Actual String Array: " + Arrays.toString(strArray));
+        //Sorting the string array
         Arrays.sort(strArray);
-        System.out.println("Sorted String Array is: " + Arrays.toString(strArray));
+        System.out.println("Sorted String Array: " + Arrays.toString(strArray));
 
     }
 

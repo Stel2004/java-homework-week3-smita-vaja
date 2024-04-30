@@ -1,6 +1,7 @@
 package java_homework_week3;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * 18. Write a Java program to sum values of an array.
@@ -8,15 +9,31 @@ import java.util.Arrays;
 public class Programme18 {
 
     public static void main(String[] args) {
-        // Numeric array declaration
-        int[] numArray = {
-                1789, 2035, 1899, 2040, 1950, 2255, 7897, 1455, 787};
+        //Scanner declaration for reading input form console
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the length for both arrays: ");
+        int arrLength = Integer.parseInt(scanner.nextLine());
+
+        // Numeric array Declaration
+        int[] numArray = new int[arrLength];
+        System.out.println("---------Number Array elements-------------");
+        for (int i = 0; i < numArray.length; i++){
+            System.out.println("Please enter " + i + " element value of Number Array:");
+            numArray[i] = scanner.nextInt();
+        }
+
+        //int[] numArray = {19, 35, 18, 240, 950, 2255, 897, 145, 77};
+        // calling sum of array function to add all elements of array
+        sumOfArray(numArray);
+    }
+
+    public static void sumOfArray(int[] numArr){
         int sum = 0;
         // Calculating the sum of arrays value using for loop
-        for (int i = 0; i < numArray.length; i++) {
-            sum = sum + numArray[i];
+        for (int i = 0; i < numArr.length; i++) {
+            sum = sum + numArr[i];
         }
-        System.out.println("Values of the element of the array are : " + Arrays.toString(numArray));
-        System.out.println("Sum of all the values of the arrays are : " + sum);
+        System.out.println("Original elements value of numeric array : " + Arrays.toString(numArr));
+        System.out.println("Sum of above elements of numeric array : " + sum);
     }
 }
